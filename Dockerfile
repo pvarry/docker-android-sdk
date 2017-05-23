@@ -11,7 +11,8 @@ RUN dpkg --add-architecture i386
 RUN apt-get -qqy update
 RUN apt-get -qqy install libncurses5:i386 libstdc++6:i386 zlib1g:i386
 RUN wget --quiet --output-document=sdk-tools.zip https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
-RUN unzip sdk-tools.zip -d /opt
+RUN mkdir /opt/android-sdk-linux
+RUN unzip sdk-tools.zip -d /opt/android-sdk-linux
 RUN rm -f sdk-tools.zip
 RUN rm -rf /var/lib/apt/lists/*
 
