@@ -6,7 +6,7 @@ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 COPY android-accept-licenses.sh /opt
 
 RUN apt-get update
-RUN apt-get install default-jdk wget expect git -y
+RUN apt-get install default-jdk wget unzip expect git -y
 RUN dpkg --add-architecture i386
 RUN apt-get -qqy update
 RUN apt-get -qqy install libncurses5:i386 libstdc++6:i386 zlib1g:i386
