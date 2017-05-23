@@ -17,7 +17,7 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager --update 
 RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager 'tools'
 RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager 'platform-tools'
-RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager 'build-tools;25.0.3
+RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager 'build-tools;25.0.3'
 RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager 'platforms;android-23'
 RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager 'extras;android;m2repository'
 RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager 'extras;google;m2repository'
