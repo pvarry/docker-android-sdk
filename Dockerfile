@@ -37,14 +37,11 @@ RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;google;m2repository'
 
 # Download and install Gradle
 ENV GRADLE_VERSION 3.3
-ENV GRADLE_SHA c58650c278d8cf0696cab65108ae3c8d95eea9c1938e0eb8b997095d5ca9a292
 
-RUN cd /usr/lib \
- && curl -fl https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip -o gradle-bin.zip \
- && echo "${GRADLE_SHA} gradle-bin.zip" | sha256sum -c - \
- && unzip "gradle-bin.zip" \
- && ln -s "${GRADLE_HOME}-${GRADLE_VERSION}/bin/gradle" ${GRADLE_HOME} \
- && rm "gradle-bin.zip"
+RUN wget --quiet --output-document=gradle-bin.zip https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
+RUN mkdir ${GRADLE_HOME}
+RUN unzip -q gradle-bin.zip -d ${GRADLE_HOME}
+RUN rm -f gradle-bin.zip
 
 # Set Appropriate Environmental Variables
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
