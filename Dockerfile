@@ -2,7 +2,6 @@ FROM ubuntu:16.04
 
 # Configure base folders.
 ENV ANDROID_HOME /opt/android-sdk
-ENV GRADLE_HOME /usr/lib/gradle
 
 # Update the base image with the required components.
 RUN apt-get update
@@ -35,14 +34,5 @@ RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-23'
 RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;android;m2repository'
 RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;google;m2repository'
 
-# Download and install Gradle
-ENV GRADLE_VERSION 3.3
-
-RUN wget --quiet --output-document=gradle-bin.zip https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
-RUN mkdir ${GRADLE_HOME}
-RUN unzip -q gradle-bin.zip -d ${GRADLE_HOME}
-RUN rm -f gradle-bin.zip
-
 # Set Appropriate Environmental Variables
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-ENV PATH ${PATH}:${GRADLE_HOME}/bin
