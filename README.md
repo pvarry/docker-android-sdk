@@ -1,6 +1,6 @@
 # The Android SDK docker build file
 
-Android SD docker image for building Android apps. May be used for CI systems as GitLab, Teamcity, Jenkins...
+Android SDK docker image for building Android apps. To be used CI systems as GitLab, Teamcity, Jenkins...
 
 ## Preinstalled packages
 - Android SDK tools revision 3859397 (26.0.1).
@@ -9,7 +9,4 @@ Android SD docker image for building Android apps. May be used for CI systems as
 - SDK Platform Android 6.0, API 23
 - Android Support Repository
 - Google Repository
-
-## Acknowledgment
-
-Thanks to guys from https://github.com/appunite for accept android licenses script.
+- Gradle 3.3
