@@ -24,7 +24,8 @@ RUN rm -f sdk-tools.zip
 ENV ANDROID_BUILD_TOOLS_VERSION 25.0.3
 
 RUN mkdir ${HOME}/.android
-RUN echo 'count=0' > ${HOME}/.android/repositories.cfg
+
+RUN cp repositories.cfg > ${HOME}/.android/repositories.cfg
 
 RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update 
 RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'tools'
