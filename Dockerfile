@@ -24,10 +24,11 @@ RUN rm -f sdk-tools.zip
 ENV ANDROID_BUILD_TOOLS_VERSION 25.0.3
 
 RUN mkdir ${HOME}/.android
+RUN rm -rf ${HOME}/.android/cache
 COPY repositories.cfg ${HOME}/.android
 RUN touch ${HOME}/.android/repositories.cfg
 RUN chown $RUN_USER:$RUN_USER ${HOME}/.android/repositories.cfg
-RUN mkdir ${ANDROID_HOME}/.android
+#RUN mkdir ${ANDROID_HOME}/.android
 #COPY repositories.cfg ${ANDROID_HOME}/.android
 #RUN touch ${ANDROID_HOME}/.android/repositories.cfg
 #RUN chown $RUN_USER:$RUN_USER ${ANDROID_HOME}/.android/repositories.cfg
