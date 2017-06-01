@@ -25,6 +25,13 @@ ENV ANDROID_BUILD_TOOLS_VERSION 25.0.3
 
 RUN mkdir ${HOME}/.android
 COPY repositories.cfg ${HOME}/.android
+RUN touch ${HOME}/.android/repositories.cfg
+RUN chown $RUN_USER:$RUN_USER ${HOME}/.android/repositories.cfg
+
+RUN mkdir ${ANDROID_HOME}/.android
+COPY repositories.cfg ${ANDROID_HOME}/.android
+RUN touch ${ANDROID_HOME}/.android/repositories.cfg
+RUN chown $RUN_USER:$RUN_USER ${ANDROID_HOME}/.android/repositories.cfg
 
 RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update 
 RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'tools'
