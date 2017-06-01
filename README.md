@@ -9,4 +9,3 @@ Android SDK docker image for building Android apps. To be used CI systems as Git
 - Android SDK build-tools, revision 25.0.3
 - SDK Platform Android 6.0, API 23
 - Android Support Repository
-- Google Repository
