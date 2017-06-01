@@ -24,8 +24,7 @@ RUN rm -f sdk-tools.zip
 ENV ANDROID_BUILD_TOOLS_VERSION 25.0.3
 
 RUN mkdir ${HOME}/.android
-
-COPY repositories.cfg ${HOME}/.android/repositories.cfg
+COPY repositories.cfg ${HOME}/.android
 
 RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update 
 RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'tools'
@@ -36,6 +35,7 @@ RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;android;m2repository'
 RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;google;m2repository'
 # RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2'
 # RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2'
+RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'add-ons;addon-datalogic-sdk-v1-23-datalogic-23'
 
 # Set Appropriate Environmental Variables
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
