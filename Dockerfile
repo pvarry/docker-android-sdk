@@ -31,8 +31,8 @@ RUN mkdir ${HOME}/.android \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update
 
 # Install the add-on SDKs (offline).
-COPY add-ons.zip $(ANDROID_HOME)/add-ons.zip
-RUN unzip -q add-ons.zip -d ${ANDROID_HOME} \
+COPY add-ons-linux.zip add-ons.zip
+RUN unzip -qo add-ons.zip -d ${ANDROID_HOME} \
   && rm -f add-ons.zip \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update
 
