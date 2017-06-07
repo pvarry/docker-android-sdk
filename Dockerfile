@@ -33,7 +33,7 @@ RUN mkdir ${HOME}/.android \
 # Install the add-on SDKs (offline).
 COPY add-ons.zip $(ANDROID_HOME)/addons.zip
 RUN unzip -q add-ons.zip -d ${ANDROID_HOME} \
-  && rm -f add-ons.zip
+  && rm -f add-ons.zip \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update
 
 # Set the environmental variables
