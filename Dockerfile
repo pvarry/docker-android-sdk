@@ -5,7 +5,7 @@ ENV ANDROID_HOME /opt/android-sdk
 
 # Update the base image with the required components.
 RUN apt-get update \
-  && apt-get install openjdk-8-jdk wget zip unzip git build-essential -y \
+  && apt-get install openjdk-8-jdk wget tar zip unzip lib32stdc++6 lib32z1 git file build-essential -y \
   && rm -rf /var/lib/apt/lists/*
 
 # Download the Android SDK and unpack it to the destination folder.
