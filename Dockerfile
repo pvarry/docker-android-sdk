@@ -23,6 +23,9 @@ RUN mkdir ${HOME}/.android \
   && echo "count=0" > ${HOME}/.android/repositories.cfg \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'tools' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platform-tools' \
+  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'ndk-bundle' \
+  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'lldb;2.3' \
+  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'cmake;3.6.3155560' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'build-tools;'${ANDROID_BUILD_TOOLS_VERSION} \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-23' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;android;m2repository' \
@@ -37,4 +40,4 @@ RUN unzip -qo add-ons.zip -d ${ANDROID_HOME} \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update
 
 # Set the environmental variables
-ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/ndk-bundle
