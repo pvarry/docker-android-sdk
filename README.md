@@ -12,4 +12,4 @@ Android SDK docker image based upon **Ubuntu 16.04** to be used CI (such as GitL
 - Android SDK build-tools (26.0.0)
 - Android SDK platform 6.0, API 23
 - Android support repository
-- Datalogic SDK for Android (1.5 w/ patched extension)
+- Datalogic SDK for Android (1.7)
