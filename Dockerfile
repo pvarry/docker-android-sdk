@@ -37,5 +37,9 @@ RUN unzip -qo add-ons.zip -d ${ANDROID_HOME} \
   && rm -f add-ons.zip \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update
 
+# Disable Gradle daemon, since we are running on a CI server.
+RUN mkdir ${HOME}/.gradle \
+  && echo "org.gradle.daemon=false" > ${HOME}/.gradle/gradle.properties
+
 # Set the environmental variables
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/ndk-bundle
