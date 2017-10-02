@@ -9,7 +9,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # Download the Android SDK and unpack it to the destination folder.
-ENV ANDROID_SDK_VERSION 3859397
+ENV ANDROID_SDK_VERSION 4333796
 
 RUN wget --quiet --output-document=sdk-tools.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip \
   && mkdir ${ANDROID_HOME} \
@@ -17,7 +17,7 @@ RUN wget --quiet --output-document=sdk-tools.zip https://dl.google.com/android/r
   && rm -f sdk-tools.zip
 
 # Install the SDK components.
-ENV ANDROID_BUILD_TOOLS_VERSION 26.0.0
+ENV ANDROID_BUILD_TOOLS_VERSION 26.0.2
 
 RUN mkdir ${HOME}/.android \
   && echo "count=0" > ${HOME}/.android/repositories.cfg \
