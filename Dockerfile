@@ -17,14 +17,12 @@ RUN wget --quiet --output-document=sdk-tools.zip https://dl.google.com/android/r
   && rm -f sdk-tools.zip
 
 # Install the SDK components.
-ENV ANDROID_BUILD_TOOLS_VERSION 26.0.2
-
 RUN mkdir ${HOME}/.android \
   && echo "count=0" > ${HOME}/.android/repositories.cfg \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'tools' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platform-tools' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'ndk-bundle' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'build-tools;'${ANDROID_BUILD_TOOLS_VERSION} \
+  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'build-tools;27.0.0' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-23' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;android;m2repository' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2' \
