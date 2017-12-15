@@ -9,7 +9,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # Download the Android SDK and unpack it to the destination folder.
-ENV ANDROID_SDK_VERSION 4333796
+ENV ANDROID_SDK_VERSION 3859397
 
 RUN wget --quiet --output-document=sdk-tools.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip \
   && mkdir ${ANDROID_HOME} \
