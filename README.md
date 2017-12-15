@@ -6,7 +6,7 @@ Android SDK docker image based upon **Ubuntu 16.04** to be used CI (such as GitL
 - Git
 - Zip/unzip
 - OpenJDK 8
-- Android SDK Tools (26.1.1)
+- Android SDK Tools (26.0.2)
 - Android SDK Platform-Tools (27.0.0)
 - Android SDK Platform 23 (6.0)
 - Android SDK Build-Tools (27.0.2)
