@@ -3,6 +3,7 @@
 Android SDK docker image based upon **Ubuntu 16.04** to be used CI (such as GitLab) to build Android applications.
 
 ## Preinstalled packages
+
 - Git
 - Zip/unzip
 - OpenJDK 8
