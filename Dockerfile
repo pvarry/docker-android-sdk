@@ -23,7 +23,9 @@ RUN mkdir ${HOME}/.android \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platform-tools' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'ndk-bundle' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'build-tools;27.0.3' \
+  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-19' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-23' \
+  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-25' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;android;m2repository' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2' \
