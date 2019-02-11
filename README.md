@@ -9,10 +9,10 @@ Android SDK docker image based upon **Ubuntu 16.04** to be used CI (such as GitL
 - OpenJDK 8
 - Android SDK Tools (26.1.1)
 - Android SDK Platform-Tools (28.0.1)
-- Android SDK Platform 19, 23, 25, 26 (4.4, 6.0, 7.1.1, 8.0)
+- Android SDK Platform 19, 23, 25, 26, 27, 28 (4.4, 6.0, 7.1.1, 8.0, 8.1, 9.0)
 - Android SDK Build-Tools (28.0.3)
-- Android NDK Bundle (18.1.5063045)
+- Android NDK Bundle (19.0.5232133)
 - Android Support Repository (47.0.0)
 - ConstraintLayout for Android (1.0.2)
 - Solver for ConstraintLayout (1.0.2)
-- Datalogic SDK for Android (v1 revision 13)
+- Datalogic SDK for Android (v1 revision 15)
