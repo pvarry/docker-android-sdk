@@ -15,4 +15,4 @@ Android SDK docker image based upon **Ubuntu 18.04** to be used in CI environmen
 - Android Support Repository (47.0.0)
 - ConstraintLayout for Android (1.0.2)
 - Solver for ConstraintLayout (1.0.2)
-- Datalogic SDK for Android (v1 revision 17)
+- Datalogic SDK for Android (v1 revision 19)
