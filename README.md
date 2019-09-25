@@ -8,7 +8,7 @@ Android SDK docker image based upon **Ubuntu 18.04** to be used in CI environmen
 - Zip/unzip
 - OpenJDK 8
 - Android SDK Tools (26.1.1)
-- Android SDK Platform-Tools (29.0.2)
+- Android SDK Platform-Tools (29.0.4)
 - Android SDK Platform 19, 23, 25, 26, 27, 28 (4.4, 6.0, 7.1.1, 8.0, 8.1, 9.0)
 - Android SDK Build-Tools (29.0.2)
 - Android NDK Bundle (20.0.5594570)
