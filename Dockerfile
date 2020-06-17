@@ -9,10 +9,10 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # Download the Android SDK and unpack it to the destination folder.
-RUN wget --quiet --output-document=sdk-tools.zip https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip \
+RUN wget --quiet --output-document=commandlinetools.zip https://dl.google.com/android/repository/commandlinetools-linux-6514223_latest.zip \
   && mkdir ${ANDROID_HOME} \
-  && unzip -q sdk-tools.zip -d ${ANDROID_HOME} \
-  && rm -f sdk-tools.zip
+  && unzip -q commandlinetools.zip -d ${ANDROID_HOME} \
+  && rm -f commandlinetools.zip
 
 # Install the SDK components.
 RUN mkdir ${HOME}/.android \
@@ -20,7 +20,7 @@ RUN mkdir ${HOME}/.android \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'tools' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platform-tools' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'ndk-bundle' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'build-tools;29.0.3' \
+  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'build-tools;30.0.0' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-19' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-23' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-25' \
@@ -28,15 +28,6 @@ RUN mkdir ${HOME}/.android \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-27' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-28' \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-29' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;android;m2repository' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update
-
-# Install the add-on SDKs (offline).
-COPY add-ons-linux.zip add-ons.zip
-RUN unzip -qo add-ons.zip -d ${ANDROID_HOME} \
-  && rm -f add-ons.zip \
   && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update
 
 # Disable Gradle daemon, since we are running on a CI server.
