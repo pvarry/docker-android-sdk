@@ -20,7 +20,7 @@ RUN mkdir ${HOME}/.android \
   && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager 'tools' \
   && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager 'platform-tools' \
   && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager 'ndk-bundle' \
-  && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager 'build-tools;30.0.0' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager 'build-tools;30.0.2' \
   && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager 'platforms;android-19' \
   && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager 'platforms;android-23' \
   && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager 'platforms;android-25' \
