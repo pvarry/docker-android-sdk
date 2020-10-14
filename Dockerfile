@@ -17,19 +17,19 @@ RUN wget --quiet --output-document=commandlinetools.zip https://dl.google.com/an
 # Install the SDK components.
 RUN mkdir ${HOME}/.android \
   && echo "count=0" > ${HOME}/.android/repositories.cfg \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'tools' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platform-tools' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'ndk-bundle' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'build-tools;30.0.2' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-19' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-23' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-25' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-26' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-27' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-28' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-29' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager 'platforms;android-30' \
-  && echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager 'tools' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager 'platform-tools' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager 'ndk-bundle' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager 'build-tools;30.0.2' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager 'platforms;android-19' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager 'platforms;android-23' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager 'platforms;android-25' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager 'platforms;android-26' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager 'platforms;android-27' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager 'platforms;android-28' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager 'platforms;android-29' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager 'platforms;android-30' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --update
 
 # Disable Gradle daemon, since we are running on a CI server.
 RUN mkdir ${HOME}/.gradle \
