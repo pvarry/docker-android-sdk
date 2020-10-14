@@ -36,4 +36,4 @@ RUN mkdir ${HOME}/.gradle \
   && echo "org.gradle.daemon=false" > ${HOME}/.gradle/gradle.properties
 
 # Set the environmental variables
-ENV PATH ${PATH}:${ANDROID_HOME}/cmdline-tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/ndk-bundle
+ENV PATH ${PATH}:${ANDROID_HOME}/cmdline-tools/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/ndk-bundle
