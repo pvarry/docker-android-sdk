@@ -9,7 +9,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # Download the Android SDK and unpack it to the destination folder.
-RUN wget --quiet --output-document=commandlinetools.zip https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip \
+RUN wget --quiet --output-document=commandlinetools.zip https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip \
   && mkdir ${ANDROID_HOME} \
   && unzip -q commandlinetools.zip -d ${ANDROID_HOME}/cmdline-tools \
   && rm -f commandlinetools.zip
@@ -28,6 +28,7 @@ RUN mkdir ${HOME}/.android \
   && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager 'platforms;android-27' \
   && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager 'platforms;android-28' \
   && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager 'platforms;android-29' \
+  && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager 'platforms;android-30' \
   && echo y | ${ANDROID_HOME}/cmdline-tools/tools/bin/sdkmanager --update
 
 # Disable Gradle daemon, since we are running on a CI server.
