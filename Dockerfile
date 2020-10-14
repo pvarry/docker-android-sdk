@@ -11,7 +11,7 @@ RUN apt-get update \
 # Download the Android SDK and unpack it to the destination folder.
 RUN wget --quiet --output-document=commandlinetools.zip https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip \
   && mkdir ${ANDROID_HOME} \
-  && unzip -q commandlinetools.zip -d ${ANDROID_HOME}/tools \
+  && unzip -q commandlinetools.zip -d ${ANDROID_HOME} \
   && rm -f commandlinetools.zip
 
 # Install the SDK components.
